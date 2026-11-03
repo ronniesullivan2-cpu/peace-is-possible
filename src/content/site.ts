@@ -8,7 +8,7 @@ export const site = {
   url: "https://peaceispossiblerecovery.com",
   // The Shopify store: checkout, the contact inbox and policy pages. At the
   // domain cutover this becomes the store's new Shopify domain.
-  store: "https://peaceispossiblerecovery.com",
+  store: "https://shop.peaceispossiblerecovery.com",
   city: "Colorado Springs",
   region: "CO",
   serviceArea: "In person in Colorado Springs and online",
