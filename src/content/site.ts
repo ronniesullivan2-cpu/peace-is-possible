@@ -199,7 +199,7 @@ export const coaching = {
   },
   // Sara's services, from the live Shopify products.
   nutrition: [
-    { name: "Nutrition coaching with daily support", price: "$100", unit: "per month", body: "Real-time support for a steadier, more trusting relationship with food. No rigid meal plans.", url: `${site.store}/products/in-person-nutrition-coaching-monthly` },
+    { name: "Nutrition coaching with daily support", price: "$100", unit: "per week", body: "Real-time support for a steadier, more trusting relationship with food. No rigid meal plans.", url: `${site.store}/products/in-person-nutrition-coaching-monthly` },
     { name: "Single nutrition session", price: "$90", unit: "one session", body: "In person or remote. We look at your habits, challenges and goals and map a realistic path.", url: `${site.store}/products/one-on-one-nutrition-coaching-single-session` },
     { name: "Monthly personalized targets", price: "$75", unit: "per month", body: "Nutrition targets built around your goals and where you are in recovery, reviewed each month.", url: `${site.store}/products/remote-nutrition-coaching-monthly` },
   ],
