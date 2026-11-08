@@ -132,7 +132,7 @@ export function ProductCard({ product }: { product: Product }) {
               Add to bag
             </button>
             <a href={productUrl(product)} target="_blank" rel="noopener" className="inline-flex items-center gap-1.5 justify-self-start text-sm text-[var(--ink-2)] hover:text-[var(--ink)]">
-              View on our store <ArrowUpRight size={14} />
+              {product.category === "coffee" ? "Start a coffee subscription" : "View on our store"} <ArrowUpRight size={14} />
             </a>
           </div>
         </div>
