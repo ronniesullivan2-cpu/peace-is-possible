@@ -14,6 +14,13 @@ const body = Figtree({ variable: "--font-body", subsets: ["latin"] });
 export const metadata: Metadata = {
   metadataBase,
   title: { default: site.name, template: `%s | ${site.shortName}` },
+  icons: {
+    icon: [
+      { url: "/icon.png", type: "image/png", sizes: "192x192" },
+      { url: "/favicon.ico", type: "image/x-icon" },
+    ],
+    apple: [{ url: "/icon.png", type: "image/png" }],
+  },
   robots: indexable ? { index: true, follow: true } : { index: false, follow: false },
 };
 
