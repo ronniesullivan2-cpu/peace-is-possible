@@ -167,7 +167,7 @@ function HeroCopy() {
   return (
     <div className="mx-auto flex h-full min-h-[100dvh] max-w-[1320px] flex-col px-4 pt-24 sm:px-6 md:justify-center md:pt-16 lg:px-10">
       <div className="max-w-[34rem] md:w-[44%]">
-        <h1 className="text-[2.75rem] font-semibold leading-[1.02] tracking-[-0.045em] sm:text-6xl lg:text-[4.75rem]">
+        <h1 className="text-[2.2rem] font-semibold leading-[1.02] tracking-[-0.045em] sm:text-5xl lg:text-[3.8rem]">
           {home.hero.headline}
         </h1>
         <p className="mt-5 max-w-[30rem] text-lg leading-relaxed text-[var(--hero-ink-2)] md:mt-7 md:text-xl">{home.hero.sub}</p>
