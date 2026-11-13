@@ -41,8 +41,9 @@ function Stage({ progress, active }: { progress: MotionValue<number>; active: bo
 
   return (
     <div className="absolute inset-0 bg-[var(--hero-bg)]">
-      {/* Still image sits underneath until the scene mounts, and is the whole hero under reduced motion. */}
-      <HeroStill />
+      {/* Keep the photo fallback only for lite devices. On full-scene devices, start
+          with the dark hero background so the old photo never flashes before WebGL mounts. */}
+      {mode === "lite" && <HeroStill />}
       {mode === "lite" && <LiteCanopy />}
       {mode === "full" && (
         <div className={`absolute inset-0 cn-fadeIn`}>
