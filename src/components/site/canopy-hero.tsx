@@ -2,7 +2,6 @@
 
 import { useRef, useSyncExternalStore } from "react";
 import dynamic from "next/dynamic";
-import { getImageProps } from "next/image";
 import Link from "next/link";
 import { motion, useInView, useReducedMotion, useScroll, useTransform, type MotionValue } from "motion/react";
 import { ArrowRight, Leaf } from "@phosphor-icons/react";
@@ -15,27 +14,25 @@ const mq = "(max-width: 767px)";
 
 const CanopyScene = dynamic(() => import("./canopy-scene"), { ssr: false });
 
-// The hero photo is the LCP element. A <picture> lets the browser pick the
-// portrait crop on phones from the first HTML, before any script runs.
+// The hero photo is the LCP element. Use a native <picture> so the browser
+// selects the correct crop during HTML parsing, before CSS or React hydrates.
 function HeroStill({ className = "" }: { className?: string }) {
-  const common = { alt: "", sizes: "100vw", quality: 60, fetchPriority: "high", loading: "eager" } as const;
-  const { props: wide } = getImageProps({ ...common, src: "/canopy/canopy-sun.webp", width: 960, height: 720 });
-  const { props: tall } = getImageProps({ ...common, src: "/canopy/canopy-tall.webp", width: 1200, height: 2133 });
   return (
-    <>
-      {/* Keep the desktop branches image as its own element so it never briefly
-          displays the portrait/mobile crop during initial page rendering. */}
+    <picture
+      className="absolute inset-0"
+      style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }}
+    >
+      <source media="(min-width: 768px)" srcSet="/canopy/canopy-sun.webp" />
       <img
-        {...wide}
+        src="/canopy/canopy-tall.webp"
         alt=""
-        className={`absolute inset-0 hidden size-full object-cover md:block ${className}`}
+        fetchPriority="high"
+        loading="eager"
+        decoding="async"
+        className={`size-full object-cover ${className}`}
+        style={{ width: "100%", height: "100%", objectFit: "cover" }}
       />
-      <img
-        {...tall}
-        alt=""
-        className={`absolute inset-0 size-full object-cover md:hidden ${className}`}
-      />
-    </>
+    </picture>
   );
 }
 
