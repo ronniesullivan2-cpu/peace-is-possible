@@ -130,7 +130,7 @@ export const seo = {
 export const home = {
   hero: {
     headline: "Eating Disorder Recovery Coaching in Colorado Springs",
-    sub: "Get support from someone who has been there. Weekly sessions, daily support, in Colorado Springs or Online",
+    sub: "Get support from someone who has been there. Weekly sessions, daily support, in Colorado Springs or online",
   },
   intro: {
     title: "A personal alternative to treatment centers",
