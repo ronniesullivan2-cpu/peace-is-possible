@@ -129,8 +129,8 @@ export const seo = {
 
 export const home = {
   hero: {
-    headline: "Make peace with food.",
-    sub: "Eating disorder recovery coaching from someone who has been there. Weekly sessions, daily support, in Colorado Springs or online.",
+    headline: "Eating Disorder Recovery Coaching in Colorado Springs",
+    sub: "Get support from someone who has been there. Weekly sessions, daily support, in Colorado Springs or Online",
   },
   intro: {
     title: "A personal alternative to treatment centers",
