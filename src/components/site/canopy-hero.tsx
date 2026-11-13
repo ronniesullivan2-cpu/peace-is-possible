@@ -22,10 +22,20 @@ function HeroStill({ className = "" }: { className?: string }) {
   const { props: wide } = getImageProps({ ...common, src: "/canopy/canopy-sun.webp", width: 960, height: 720 });
   const { props: tall } = getImageProps({ ...common, src: "/canopy/canopy-tall.webp", width: 1200, height: 2133 });
   return (
-    <picture>
-      <source media={mq} srcSet={tall.srcSet} sizes="100vw" />
-      <img {...wide} alt="" className={`absolute inset-0 size-full object-cover ${className}`} />
-    </picture>
+    <>
+      {/* Keep the desktop branches image as its own element so it never briefly
+          displays the portrait/mobile crop during initial page rendering. */}
+      <img
+        {...wide}
+        alt=""
+        className={`absolute inset-0 hidden size-full object-cover md:block ${className}`}
+      />
+      <img
+        {...tall}
+        alt=""
+        className={`absolute inset-0 size-full object-cover md:hidden ${className}`}
+      />
+    </>
   );
 }
 
