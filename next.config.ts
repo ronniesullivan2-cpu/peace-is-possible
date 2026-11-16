@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 import { redirects, site } from "./src/content/site";
 
-const storePaths = ["/products/:path*", "/cart/:path*", "/policies/:path*", "/account/:path*"];
+const storePaths = ["/products/:path*", "/collections/:path*", "/cart/:path*", "/policies/:path*", "/account/:path*"];
 
 const nextConfig: NextConfig = {
   cacheComponents: true,
